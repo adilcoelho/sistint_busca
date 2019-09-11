@@ -38,7 +38,7 @@ class Graph:
         print("Beginning Dijkstra's algorithm")
         starting_sec = time.time()
 
-        starting_vertex_coordinates = (self.agent_position[0], self.agent_position[0], self.agent_direction)
+        starting_vertex_coordinates = (self.agent_position[0], self.agent_position[1], self.agent_direction)
         starting_vertex = self.vertices[starting_vertex_coordinates]
         starting_vertex.distance = 0
 
@@ -109,7 +109,7 @@ class Graph:
         print("Beginning A* algorithm")
         starting_sec = time.time()
 
-        starting_vertex_coordinates = (self.agent_position[0], self.agent_position[0], self.agent_direction)
+        starting_vertex_coordinates = (self.agent_position[0], self.agent_position[1], self.agent_direction)
         starting_vertex = self.vertices[starting_vertex_coordinates]
         starting_vertex.distance = 0
 
