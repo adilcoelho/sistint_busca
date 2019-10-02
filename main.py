@@ -13,6 +13,7 @@ def main():
     print()
     print("Select 1 to see the Dijkstra's Algorithm path")
     print("Select 2 to see the A* Algorithm path")
+    print("Select 0 to quit")
     user_input = input("Selection: ")
 
     while user_input not in ('0', '1', '2'):

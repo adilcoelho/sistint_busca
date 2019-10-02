@@ -47,13 +47,11 @@ class Graph:
 
         self.create_neighboring_vertices()
 
-        path_to_ending_point_found = False
-
         unvisited_queue = [(self.vertices[vertex_coordinates].distance, vertex_coordinates)
                            for vertex_coordinates in self.vertices.keys()]
         heapq.heapify(unvisited_queue)
 
-        while not path_to_ending_point_found:
+        while unvisited_queue:
             nodes_explored += 1
             current_vertex_coordinates = heapq.heappop(unvisited_queue)
             current_vertex_coordinates = current_vertex_coordinates[1]
@@ -64,11 +62,9 @@ class Graph:
             current_vertex.visited = True
 
             current_vertex_x_y = (current_vertex_coordinates[0], current_vertex_coordinates[1])
-            if current_vertex_x_y == self.ending_point:
-                path_to_ending_point_found = True
+            if current_vertex_x_y == self.ending_point and not ending_vertex:
                 ending_vertex_coordinates = current_vertex_coordinates
                 ending_vertex = current_vertex
-                continue
 
             for next_vertex_coordinates in current_vertex.adjacent.keys():
                 next_vertex = self.vertices[next_vertex_coordinates]
